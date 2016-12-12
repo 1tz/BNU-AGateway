@@ -1,2 +1,2 @@
 # BNU_Gateway
-Python
+Access internet easier
