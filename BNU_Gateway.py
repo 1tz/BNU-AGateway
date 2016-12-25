@@ -3,8 +3,8 @@ import urllib2
 import urllib
 import re
 
-var username = "学号"
-var password = "密码"
+username = "学号"
+password = "密码"
 
 def internet_on():
     try:
