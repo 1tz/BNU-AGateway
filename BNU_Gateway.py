@@ -8,7 +8,7 @@ password = "密码"
 
 def internet_on():
     try:
-        urllib2.urlopen('http://gw.bnu.edu.cn', timeout=1)
+        urllib2.urlopen('http://gw.bnu.edu.cn', timeout=0.1)
         return True
     except urllib2.URLError as err:
         return False
