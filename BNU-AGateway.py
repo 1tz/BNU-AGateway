@@ -8,7 +8,7 @@ password = "密码"
 
 def internet_on():
     try:
-        urllib2.urlopen('http://gw.bnu.edu.cn', timeout=0.1)
+        urllib2.urlopen('http://gw.bnu.edu.cn', timeout=0.02)
         return True
     except urllib2.URLError as err:
         return False
@@ -53,11 +53,10 @@ def force_logout():
 
 if internet_on():
     content = login()
-    match = re.findall('登录成功！', content)
-    if len(match) == 0:
+    if len(re.findall('成功', content)) == 0:
         force_logout()
         content = login()
-        m = re.findall('登录成功！', content)
+        m = re.findall('成功', content)
         if len(m) == 0:
             print '没得救了，充钱吧'
         else:
