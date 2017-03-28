@@ -6,7 +6,7 @@ import re
 username = "学号"
 password = "密码"
 
-def internet_on():
+def check():
     try:
         urllib2.urlopen('http://gw.bnu.edu.cn', timeout=0.02)
         return True
@@ -51,7 +51,7 @@ def force_logout():
     request_logout = urllib2.Request(posturl_logout, postData_logout, header_logout)
     response_logout = urllib2.urlopen(request_logout)
 
-if internet_on():
+if check():
     content = login()
     if len(re.findall('成功', content)) == 0:
         force_logout()
