@@ -51,16 +51,15 @@ def login():
     if content.find("成功") != -1:
         print '登录成功'
         return
+    elif content.find("用尽") != -1:
+        print '没救了，充钱吧'
+        return
     else:
         force_logout()
         request = urllib2.Request(posturl, postData, header)
         content = urllib2.urlopen(request).read()
-        if content.find("用尽") != -1:
-            print '没救了，充钱吧'
-            return
-        else:
-            print '全部下线，登录成功'
-            return
+        print '全部下线，登录成功'
+        return
 
 if check():
     login()
