@@ -11,6 +11,7 @@ def check():
         urllib2.urlopen('http://gw.bnu.edu.cn', timeout=0.02)
         return True
     except urllib2.URLError as err:
+        print '网络连接失败，请检查网络连接'
         return False
 
 def force_logout():
@@ -63,5 +64,3 @@ def login():
 
 if check():
     login()
-else:
-    print '网络连接失败，请检查网络连接'
