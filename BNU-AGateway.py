@@ -57,7 +57,7 @@ def login():
         return
     else:
         force_logout()
-        request = urllib2.Request(posturl, postData, header)
+        urllib2.Request(posturl, postData, header)
         print '全部下线，登录成功'
         return
 
